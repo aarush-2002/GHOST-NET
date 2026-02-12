@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #f2f2f2;
+  --color-bg-secondary: #e8e8e8;
+  --color-bg-dark: #1a1a1a;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --color-text-light: #999999;
+  --color-accent: #000000;
+  --color-border-custom: #d0d0d0;
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f2f2f2;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Launch Screen Animations */
+@keyframes floatDot {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.08; }
+  50% { transform: translateY(-30px) scale(1.2); opacity: 0.15; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes hover-rocket {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes scanRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scanPulse {
+  0% { width: 100%; height: 100%; opacity: 0.5; }
+  100% { width: 200%; height: 200%; opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes badgePulse {
+  0%, 70%, 100% { transform: scale(1); }
+  75% { transform: scale(1.05); }
+}
+
+.animate-float-dot {
+  animation: floatDot 20s infinite ease-in-out;
+}
+
+.animate-pulse-text {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.animate-hover-rocket {
+  animation: hover-rocket 3s infinite ease-in-out;
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+.animate-blink-fast {
+  animation: blink 1s infinite;
+}
+
+.animate-scan-rotate {
+  animation: scanRotate 2s infinite linear;
+}
+
+.animate-scan-pulse {
+  animation: scanPulse 2s infinite ease-out;
+}
+
+.animate-scan-pulse-delayed-1 {
+  animation: scanPulse 2s infinite ease-out 0.5s;
+}
+
+.animate-scan-pulse-delayed-2 {
+  animation: scanPulse 2s infinite ease-out 1s;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease;
+}
+
+.animate-badge-pulse {
+  animation: badgePulse 3s infinite;
+}
+
+/* Outline text */
+.outline-text {
+  -webkit-text-stroke: 2px #1a1a1a;
+  color: transparent;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+/* Launch screen transition */
+.launch-exit {
+  opacity: 0;
+  transform: scale(1.1);
+  pointer-events: none;
+}
